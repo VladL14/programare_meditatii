@@ -58,12 +58,12 @@ function CalendarProgramari() {
             ora_sfarsit: oraSfarsit,
             este_blocat: true
         };
-        axios.post("http://127.0.0.1:8000/api/programari/", payload)
+        axios.post("https://vladl14.pythonanywhere.com/api/programari/", payload)
             .then(() => {
                 alert("Rezervare reușită! 🚀");
                 setSlotSelectat(null);
                 setNume("");
-                return axios.get("http://127.0.0.1:8000/api/programari/");
+                return axios.get("https://vladl14.pythonanywhere.com/api/programari/");
             })
             .then((response) => {
                 if(response) setProgramari(response.data);
@@ -75,7 +75,7 @@ function CalendarProgramari() {
     };
 
     useEffect(() => {
-        axios.get("http://127.0.0.1:8000/api/programari/")
+        axios.get("https://vladl14.pythonanywhere.com/api/programari/")
             .then((response) => {
                 setProgramari(response.data);
             });
